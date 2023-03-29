@@ -167,7 +167,7 @@ app.get("/race", (req, res) => {
   const searchTerm = req.query.q;
 
   connection.query(
-    `SELECT * FROM races WHERE race_id LIKE '%${searchTerm}%'`,
+    `SELECT * FROM races WHERE id LIKE '%${searchTerm}%'`,
     (err, results) => {
       if (err) {
         console.error(err);
@@ -241,10 +241,10 @@ app.get("/identification", (req, res) => {
     }
   );
 });
-//post requests
+//put requests
 
 //firstname
-app.post("/editFn", async (req, res) => {
+app.put("/editFn", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const {id,first_name} = req.body; //, street_address, city, state, country
@@ -267,7 +267,7 @@ app.post("/editFn", async (req, res) => {
 });
 
 //Mn
-app.post("/editMn", async (req, res) => {
+app.put("/editMn", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const {id,middle_name} = req.body; 
@@ -287,7 +287,7 @@ app.post("/editMn", async (req, res) => {
 });
 
 //Ln
-app.post("/editLn", async (req, res) => {
+app.put("/editLn", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, last_name } = req.body;
@@ -306,7 +306,7 @@ app.post("/editLn", async (req, res) => {
   );
 });
 //Moniker
-app.post("/editMoniker", async (req, res) => {
+app.put("/editMoniker", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, moniker } = req.body;
@@ -325,7 +325,7 @@ app.post("/editMoniker", async (req, res) => {
   );
 });
 //sa1
-app.post("/editstreet1", async (req, res) => {
+app.put("/editstreet1", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, street_address1 } = req.body;
@@ -344,7 +344,7 @@ app.post("/editstreet1", async (req, res) => {
   );
 });
 //sa2
-app.post("/editstreet2", async (req, res) => {
+app.put("/editstreet2", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, street_address2 } = req.body;
@@ -363,7 +363,7 @@ app.post("/editstreet2", async (req, res) => {
   );
 });
 //city
-app.post("/editcity", async (req, res) => {
+app.put("/editcity", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, city } = req.body;
@@ -383,7 +383,7 @@ app.post("/editcity", async (req, res) => {
 });
 
 //state
-app.post("/editstate", async (req, res) => {
+app.put("/editstate", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, state } = req.body;
@@ -402,7 +402,7 @@ app.post("/editstate", async (req, res) => {
   );
 });
 //zip
-app.post("/editzip", async (req, res) => {
+app.put("/editzip", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, zip } = req.body;
@@ -421,7 +421,7 @@ app.post("/editzip", async (req, res) => {
   );
 });
 //geo
-app.post("/editgeo", async (req, res) => {
+app.put("/editgeo", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, geo_coordinates } = req.body;
@@ -440,7 +440,7 @@ app.post("/editgeo", async (req, res) => {
   );
 });
 //personid
-app.post("/editpersonid", async (req, res) => {
+app.put("/editpersonid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { firstName, id } = req.body;
@@ -459,7 +459,7 @@ app.post("/editpersonid", async (req, res) => {
   );
 });
 //addressid
-app.post("/editaddressid", async (req, res) => {
+app.put("/editaddressid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, address_type_id } = req.body;
@@ -478,7 +478,7 @@ app.post("/editaddressid", async (req, res) => {
   );
 });
 //eyecolorid
-app.post("/editeyecolorid", async (req, res) => {
+app.put("/editeyecolorid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, eye_color_id } = req.body;
@@ -498,7 +498,7 @@ app.post("/editeyecolorid", async (req, res) => {
 });
 
 //raceid
-app.post("/editraceid", async (req, res) => {
+app.put("/editraceid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, race_id } = req.body;
@@ -517,7 +517,7 @@ app.post("/editraceid", async (req, res) => {
   );
 });
 //genderid
-app.post("/editgenderid", async (req, res) => {
+app.put("/editgenderid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, gender_id } = req.body;
@@ -538,7 +538,7 @@ app.post("/editgenderid", async (req, res) => {
 
 
 //number
-app.post("/editnumber", async (req, res) => {
+app.put("/editnumber", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { person_id, number } = req.body;
@@ -559,7 +559,7 @@ app.post("/editnumber", async (req, res) => {
 
 
 //identification id
-app.post("/editidentificationid", async (req, res) => {
+app.put("/editidentificationid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { person_id, identification_id } = req.body;
@@ -580,7 +580,7 @@ app.post("/editidentificationid", async (req, res) => {
 
 
 //issued on
-app.post("/editissuedby", async (req, res) => {
+app.put("/editissuedby", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { person_id, issued_by } = req.body;
@@ -589,7 +589,7 @@ app.post("/editissuedby", async (req, res) => {
   // Insert the values into the users table in the database
 
   connection.query(
-    "UPDATE identifications SET person_id = ? WHERE issued_by = ?", //,street_address,city,state,country
+    "UPDATE identifications SET issued_by = ? WHERE person_id = ?", //,street_address,city,state,country
     [issued_by, person_id],
     (error, results) => {
       if (error) throw error;
@@ -599,7 +599,7 @@ app.post("/editissuedby", async (req, res) => {
   );
 });
 //issued On
-app.post("/editissuedon", async (req, res) => {
+app.put("/editissuedon", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { person_id, issued_on } = req.body;
@@ -620,7 +620,7 @@ app.post("/editissuedon", async (req, res) => {
 
 
 //expires on
-app.post("/editexpireson", async (req, res) => {
+app.put("/editexpireson", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { expires_on, person_id } = req.body;
@@ -639,7 +639,7 @@ app.post("/editexpireson", async (req, res) => {
   );
 });
 
-app.post("/editRestrictionType", async (req, res) => {
+app.put("/editRestrictionType", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { restriction_type, person_id } = req.body;
@@ -659,7 +659,7 @@ app.post("/editRestrictionType", async (req, res) => {
 });
 
 
-app.post("/editRestrictionTypedetails", async (req, res) => {
+app.put("/editRestrictionTypedetails", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { restriction_type_details, person_id } = req.body;
@@ -678,7 +678,7 @@ app.post("/editRestrictionTypedetails", async (req, res) => {
   );
 });
 
-app.post("/editstateid", async (req, res) => {
+app.put("/editstateid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { state_id, person_id } = req.body;
@@ -697,7 +697,7 @@ app.post("/editstateid", async (req, res) => {
   );
 });
 //affiliation id
-app.post("/editaffiliationid", async (req, res) => {
+app.put("/editaffiliationid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, person_id } = req.body;
@@ -717,7 +717,7 @@ app.post("/editaffiliationid", async (req, res) => {
 });
 
 //rank
-app.post("/editrank", async (req, res) => {
+app.put("/editrank", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { rank, person_id } = req.body;
@@ -736,7 +736,7 @@ app.post("/editrank", async (req, res) => {
   );
 });
 //affiliation type id
-app.post("/editaffiliationtypeid", async (req, res) => {
+app.put("/editaffiliationtypeid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { affiliation_type_id, person_id } = req.body;
@@ -755,7 +755,7 @@ app.post("/editaffiliationtypeid", async (req, res) => {
   );
 });
 //affiliation gang id
-app.post("/editaffiliationgangid", async (req, res) => {
+app.put("/editaffiliationgangid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { affiliationsetgang_id, person_id } = req.body;
@@ -774,7 +774,7 @@ app.post("/editaffiliationgangid", async (req, res) => {
   );
 });
 //affiliationsubsetgangid
-app.post("/editaffiliationsubsetgangid", async (req, res) => {
+app.put("/editaffiliationsubsetgangid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { affiliationsubsetgang_id, person_id } = req.body;
@@ -793,7 +793,7 @@ app.post("/editaffiliationsubsetgangid", async (req, res) => {
   );
 });
 //orgid
-app.post("/editorgid", async (req, res) => {
+app.put("/editorgid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { org_id, person_id } = req.body;
@@ -813,7 +813,7 @@ app.post("/editorgid", async (req, res) => {
 });
 
 //workph
-app.post("/editworkph", async (req, res) => {
+app.put("/editworkph", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { work_phone_number, person_id } = req.body;
@@ -833,7 +833,7 @@ app.post("/editworkph", async (req, res) => {
 });
 
 //cellno
-app.post("/editcell", async (req, res) => {
+app.put("/editcell", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { cell_number_number, person_id } = req.body;
@@ -852,7 +852,7 @@ app.post("/editcell", async (req, res) => {
   );
 });
 //primaryph flag
-app.post("/editprimephflag", async (req, res) => {
+app.put("/editprimephflag", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { primary_phone_flag, person_id } = req.body;
@@ -872,7 +872,7 @@ app.post("/editprimephflag", async (req, res) => {
 });
 //email
 
-app.post("/editemail", async (req, res) => {
+app.put("/editemail", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { email, person_id } = req.body;
@@ -893,7 +893,7 @@ app.post("/editemail", async (req, res) => {
 
 //fax
 
-app.post("/editfax", async (req, res) => {
+app.put("/editfax", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { fax, person_id } = req.body;
@@ -913,7 +913,7 @@ app.post("/editfax", async (req, res) => {
 });
 
 //fb
-app.post("/editfax", async (req, res) => {
+app.put("/editfax", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { facebook_id, person_id } = req.body;
@@ -932,7 +932,7 @@ app.post("/editfax", async (req, res) => {
   );
 });
 //twitter
-app.post("/edittwitter", async (req, res) => {
+app.put("/edittwitter", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { twitter_id, person_id } = req.body;
@@ -952,7 +952,7 @@ app.post("/edittwitter", async (req, res) => {
 });
 
 //skype
-app.post("/editskype", async (req, res) => {
+app.put("/editskype", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { skype_id, person_id } = req.body;
@@ -973,7 +973,7 @@ app.post("/editskype", async (req, res) => {
 
 
 //educationid
-app.post("/editeducationid", async (req, res) => {
+app.put("/editeducationid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { id, person_id } = req.body;
@@ -993,7 +993,7 @@ app.post("/editeducationid", async (req, res) => {
 });
 
 //educationlvl
-app.post("/editeducationid", async (req, res) => {
+app.put("/editeducationid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { level, person_id } = req.body;
@@ -1013,7 +1013,7 @@ app.post("/editeducationid", async (req, res) => {
 });
 
 //acquiredon
-app.post("/editacquiredon", async (req, res) => {
+app.put("/editacquiredon", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { acquired_on, person_id } = req.body;
@@ -1033,7 +1033,7 @@ app.post("/editacquiredon", async (req, res) => {
 });
 //degreeid
 
-app.post("/editdegreeid", async (req, res) => {
+app.put("/editdegreeid", async (req, res) => {
   // Get the values to be inserted from the request body
 
   const { degree_id, person_id } = req.body;
