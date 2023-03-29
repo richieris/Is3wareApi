@@ -1,12 +1,11 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var mysql = require("mysql2");
-// const mysql = require("promise-mysql");
 const app = express();
-
+const cors = require("cors");
 // Use the body-parser middleware to parse the request body
 app.use(bodyParser.json());
-
+app.use(cors());
 // Create a MySQL connection pool
 const connection = mysql.createConnection({
   // socketPath: "/cloudsql/my-project-12345:us-central1:mydatabase",
